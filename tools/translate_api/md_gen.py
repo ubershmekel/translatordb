@@ -15,6 +15,22 @@ output_langs = (
     "spa",
 )
 
+
+lang_code_3to2 = {
+    "eng": "en",
+    "ara": "ar",
+    "deu": "de",
+    "ell": "el",
+    "fra": "fr",
+    "heb": "he",
+    "ita": "it",
+    "jpn": "ja",
+    "kor": "ko",
+    "por": "pt",
+    "rus": "ru",
+    "spa": "es",
+}
+
 def generate_md(lang_to_examples):
     md_lines = []
     for lang in output_langs:

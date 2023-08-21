@@ -10,6 +10,7 @@ packages = [{include = "translate_api"}]
 python = "^3.11"
 google-cloud-translate = "^3.12.0"
 google-api-python-client = "^2.97.0"
+jupyterlab = "^4.0.5"
 
 
 [build-system]
