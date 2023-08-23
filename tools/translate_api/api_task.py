@@ -7,8 +7,12 @@ import os
 script_dir = os.path.dirname(__file__)
 
 examples = [
-    "If it rains tomorrow, I will stay home.",
-    "I will stay home if it rains tomorrow.",
+    "He is washing the car now.",
+    "Right now, he's washing the car.",
+    "At this moment, he's cleaning the car.",
+    "Currently, he's washing the car.",
+    "He's in the process of washing the car.",
+    "At present, he's cleaning the car.",
 ]
 
 def translate_text(target: str, text: str) -> dict:
@@ -45,7 +49,8 @@ def fix_gcp_translate(text: str) -> str:
     # but we got it for:
     # "If it rains tomorrow, I will stay home." en->fr
     # "Je resterai à la maison s&#39;il pleut demain.""
-    return text.replace('&#39;', "'")
+    # Also - "עד מחר, הדו&quot;ח יושלם."
+    return text.replace('&#39;', "'").replace('&quot;', '"')
 
 def translate(lines, lang_code):
     result = client.translate_text(parent="projects/ubershmekel", contents=lines, source_language_code="en", target_language_code=lang_code)
