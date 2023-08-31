@@ -4,13 +4,12 @@ version = "0.1.0"
 description = ""
 authors = ["Yuval Greenfield <ubershmekel@gmail.com>"]
 readme = "README.md"
-packages = [{include = "translate_api"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
 google-cloud-translate = "^3.12.0"
 google-api-python-client = "^2.97.0"
-jupyterlab = "^4.0.5"
+protobuf = "^4.24.2"
 
 
 [build-system]

@@ -7,12 +7,12 @@ import os
 script_dir = os.path.dirname(__file__)
 
 examples = [
-    "He is washing the car now.",
-    "Right now, he's washing the car.",
-    "At this moment, he's cleaning the car.",
-    "Currently, he's washing the car.",
-    "He's in the process of washing the car.",
-    "At present, he's cleaning the car.",
+    "I'm not a smart man.",
+    "I ain't too bright.",
+    "I'm not a genius by any means.",
+    "I'm not the smartest cookie.",
+    "I'm not the brainiest person.",
+    "I'm not the sharpest tool in the shed.",
 ]
 
 def translate_text(target: str, text: str) -> dict:
@@ -61,11 +61,11 @@ def translate(lines, lang_code):
 
 # print(translate(examples, "he"))
 
-out_dir = script_dir + '/out'
-if not os.path.isdir(out_dir):
-    os.mkdir(out_dir)
-
 def main():
+    out_dir = script_dir + '/out'
+    if not os.path.isdir(out_dir):
+        os.mkdir(out_dir)
+
     lang_to_examples = {
         "eng": examples,
     }
@@ -80,4 +80,4 @@ def main():
     with open(f'{out_dir}/{md_filename}', 'w', encoding='utf8') as fout:
         fout.write(md_text)
 
-main()
+# main()
