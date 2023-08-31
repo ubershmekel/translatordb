@@ -40,7 +40,7 @@ def generate_md(lang_to_examples):
             # return
             continue
         md_lines.append(f"# lang:{lang}")
-        for sentence in sorted(dedupe_sentences(lang_to_examples[lang])):
+        for sentence in dedupe_sentences(lang_to_examples[lang]):
             md_lines.append(sentence)
     
     md_text = '\n\n'.join(md_lines)
@@ -51,7 +51,10 @@ def to_md_name(name: str) -> str:
 
 
 def dedupe_sentences(sentences: List[str]):
-    deduped = {}
+    deduped = []
+    seen = set()
     for sent in sentences:
-        deduped[to_md_name(sent)] = sent
-    return list(deduped.values())
+        if to_md_name(sent) in seen:
+            continue
+        deduped.append(sent)
+    return deduped
